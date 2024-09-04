@@ -46,13 +46,34 @@ const songListArray = [
 ];
 
 app.use(express.static('server/public'));
+app.use(express.json());
 
 app.get('/artist', (req, res) => {
     res.send(artistListArray);
 });
 
 // TODO - Add GET for songs
+app.get('/song', (req, res) => {
+  res.send(songListArray);
+});
+
+app.post('/song',(req, res) => {
+    console.log(req.body); //requesting body
+
+if(req.body.title && req.body.artist){
+    songListArray.push(req.body);
+    res.sendStatus(201);
+} else {
+    res.status(400).send('song object does not have song and artist!');
+}
+
+})
 
 app.listen(PORT, () => {
     console.log('listening on port', PORT)
 });
+// [X] Look at the pattern for the working `/artist` server code & Axios request. 
+// [X] Add the server side code to return all the song data when a GET request is made for `/song`. Test this is working with the browser.
+// [X] Set up a client Axios request for `/song`, and display the song data on the DOM.
+// [X] Add an HTML form for adding a new artist. Make a POST request to the server with artist information.
+// [X]Add a server route that appends the artist to the array of artists on the server.--

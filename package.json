@@ -1,7 +1,7 @@
 {
   "name": "get-jazzy-axios-get",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Fork or Use Template - Clone - `npm install` to get all of the dependencies (just `express` for now)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.19.2"
   }
 }
